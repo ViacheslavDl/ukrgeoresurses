@@ -1,1 +1,353 @@
+/* ==========================================================================
+   1. СБРОС СТИЛЕЙ И БАЗОВЫЕ НАСТРОЙКИ (RESET & BASE)
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+html {
+    scroll-behavior: smooth; /* Плавная прокрутка по якорям */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #2D3748; /* Глубокий графитовый для текста */
+    background-color: #F7FAFC; /* Мягкий светло-серый фон сайта */
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #1A365D; /* Корпоративный темно-синий */
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #2A4365;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #1A365D;
+    border: 2px solid #1A365D;
+}
+
+.btn-secondary:hover {
+    background-color: #1A365D;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* Заголовки */
+h2 {
+    font-size: 32px;
+    color: #1A365D;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Декоративная линия под заголовками секций */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #DD6B20; /* Теплый янтарно-оранжевый акцент */
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
+
+
+/* ==========================================================================
+   2. ШАПКА САЙТА (HEADER & NAVIGATION)
+   ========================================================================== */
+.main-header {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #1A365D;
+    letter-spacing: 1px;
+}
+
+.logo-subtitle {
+    font-size: 9px;
+    color: #718096;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.main-nav a {
+    color: #4A5568;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 25px;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #DD6B20;
+}
+
+
+/* ==========================================================================
+   3. ГЛАВНЫЙ БАННЕР (HERO SECTION)
+   ========================================================================== */
+.hero-section {
+    background: linear-gradient(135deg, rgba(26, 54, 93, 0.95) 0%, rgba(42, 67, 101, 0.85) 100%);
+    color: #FFFFFF;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 35px auto;
+    color: #E2E8F0;
+}
+
+.hero-actions .btn {
+    margin: 0 10px;
+}
+
+
+/* ==========================================================================
+   4. ПРО КОМПАНИЮ (ABOUT SECTION)
+   ========================================================================== */
+.about-section {
+    padding: 80px 0;
+    background-color: #FFFFFF;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+
+/* ==========================================================================
+   5. НАПРАВЛЕНИЯ УСЛУГ (SERVICES SECTION)
+   ========================================================================== */
+.services-section {
+    padding: 80px 0;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #FFFFFF;
+    padding: 40px 30px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #1A365D;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-top-color: #DD6B20;
+}
+
+.service-card h3 {
+    font-size: 20px;
+    color: #1A365D;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 15px;
+    color: #4A5568;
+}
+
+
+/* ==========================================================================
+   6. КОНТАКТЫ И ФОРМА (CONTACTS SECTION)
+   ========================================================================== */
+.contacts-section {
+    padding: 80px 0;
+    background-color: #FFFFFF;
+}
+
+.contacts-wrapper {
+    display: flex;
+    gap: 50px;
+}
+
+.contacts-info, .contacts-form-block {
+    flex: 1;
+}
+
+.contacts-info h3 {
+    font-size: 22px;
+    color: #1A365D;
+    margin-bottom: 20px;
+}
+
+.contact-list {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.contact-list li {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Стили формы */
+.contact-form {
+    background-color: #F8FAFC;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #CBD5E0;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 15px;
+    color: #2D3748;
+    transition: border-color 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #1A365D;
+}
+
+.contact-form .btn {
+    width: 100%;
+}
+
+
+/* ==========================================================================
+   7. ПОДВАЛ (FOOTER)
+   ========================================================================== */
+.main-footer {
+    background-color: #1A365D;
+    color: #A0AEC0;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* ==========================================================================
+   8. АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 28px;
+    }
+
+    .hero-section p {
+        font-size: 15px;
+    }
+
+    .hero-actions .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .services-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contacts-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+}

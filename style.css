@@ -479,3 +479,15 @@ h2::after {
         font-size: 26px;
     }
 }
+
+.document-card a {
+    color: #2D3748;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+
+.document-card a:hover {
+    color: #DD6B20; /* При наведении ссылка станет янтарно-оранжевой */
+    text-decoration: underline;
+}

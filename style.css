@@ -8,14 +8,14 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Плавная прокрутка по якорям */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #2D3748; /* Глубокий графитовый для текста */
-    background-color: #F7FAFC; /* Мягкий светло-серый фон сайта */
+    color: #2D3748;
+    background-color: #F7FAFC;
 }
 
 .container {
@@ -36,10 +36,11 @@ body {
     transition: all 0.3s ease;
     cursor: pointer;
     border: none;
+    text-align: center;
 }
 
 .btn-primary {
-    background-color: #1A365D; /* Корпоративный темно-синий */
+    background-color: #1A365D;
     color: #FFFFFF;
 }
 
@@ -69,13 +70,12 @@ h2 {
     position: relative;
 }
 
-/* Декоративная линия под заголовками секций */
 h2::after {
     content: '';
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #DD6B20; /* Теплый янтарно-оранжевый акцент */
+    background-color: #DD6B20;
     margin: 12px auto 0 auto;
     border-radius: 2px;
 }
@@ -184,7 +184,7 @@ h2::after {
 
 
 /* ==========================================================================
-   5. НАПРАВЛЕНИЯ УСЛУГ (SERVICES SECTION)
+   5. НАПРАВЛЕНИЯ УСЛУГ (SERVICES SECTION - MAIN)
    ========================================================================== */
 .services-section {
     padding: 80px 0;
@@ -204,6 +204,9 @@ h2::after {
     flex: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 4px solid #1A365D;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .service-card:hover {
@@ -221,6 +224,7 @@ h2::after {
 .service-card p {
     font-size: 15px;
     color: #4A5568;
+    margin-bottom: 20px;
 }
 
 
@@ -306,7 +310,201 @@ h2::after {
 
 
 /* ==========================================================================
-   8. АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (RESPONSIVE)
+   8. СТИЛИ ДЛЯ ВНУТРЕННИХ СТРАНИЦ УСЛУГ (SERVICES & DETAILS)
+   ========================================================================== */
+.page-banner {
+    background: linear-gradient(135deg, #2A4365 0%, #1A365D 100%);
+    color: #FFFFFF;
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 4px solid #DD6B20;
+}
+
+.page-banner h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.page-banner p {
+    color: #E2E8F0;
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.detailed-services {
+    padding: 60px 0;
+}
+
+.services-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-item {
+    background-color: #FFFFFF;
+    padding: 35px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border-left: 5px solid #1A365D;
+}
+
+.service-item h3 {
+    color: #1A365D;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.service-item p {
+    font-size: 16px;
+    color: #4A5568;
+    margin-bottom: 20px;
+}
+
+/* Красивые списки инженерных работ */
+.service-item ul, .service-detail-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.service-item li, .service-detail-content li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #2D3748;
+}
+
+/* Кастомный маркер-стрелочка для списков */
+.service-item li::before, .service-detail-content li::before {
+    content: "→";
+    color: #DD6B20;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Раздел документов */
+.section-subtitle {
+    text-align: center;
+    color: #718096;
+    margin-top: -30px;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.documents-grid {
+    display: flex;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.document-card {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 6px;
+    flex: 1;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+
+.document-card h4 {
+    color: #1A365D;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+}
+
+.document-card ul {
+    list-style: none;
+}
+
+.document-card li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.document-card li::before {
+    content: "•";
+    color: #DD6B20;
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.document-card a {
+    color: #4A5568;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.document-card a:hover {
+    color: #1A365D;
+    text-decoration: underline;
+}
+
+/* Специфические блоки для страниц конкретных услуг (Детали) */
+.service-detail-section {
+    padding: 60px 0;
+}
+
+.service-detail-content {
+    background-color: #FFFFFF;
+    padding: 45px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.service-detail-content p.intro-text {
+    font-size: 18px;
+    color: #4A5568;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 20px;
+}
+
+.service-detail-content h3 {
+    color: #1A365D;
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Блок преимуществ на страницах услуг */
+.benefits-block {
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 4px solid #DD6B20;
+    padding: 25px;
+    border-radius: 4px;
+    margin-top: 40px;
+}
+
+.benefits-block h4 {
+    color: #1A365D;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.page-actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+/* ==========================================================================
+   9. АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (RESPONSIVE)
    ========================================================================== */
 @media (max-width: 768px) {
     .main-header .container {
@@ -331,163 +529,26 @@ h2::after {
         font-size: 15px;
     }
 
-    .hero-actions .btn {
+    .hero-actions .btn, .service-card .btn {
         display: block;
         width: 100%;
         margin: 10px 0;
     }
 
-    .services-grid {
+    .services-grid, .documents-grid, .contacts-wrapper {
         flex-direction: column;
         gap: 20px;
-    }
-
-    .contacts-wrapper {
-        flex-direction: column;
-        gap: 40px;
     }
 
     .contact-form {
         padding: 20px;
     }
-}
 
-/* ==========================================================================
-   9. СТИЛИ ДЛЯ СТРАНИЦЫ УСЛУГ (SERVICES.HTML)
-   ========================================================================== */
-.page-banner {
-    background: linear-gradient(135deg, #2A4365 0%, #1A365D 100%);
-    color: #FFFFFF;
-    padding: 60px 0;
-    text-align: center;
-    border-bottom: 3px solid #DD6B20;
-}
-
-.page-banner h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.page-banner p {
-    color: #E2E8F0;
-    font-size: 16px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.detailed-services {
-    padding: 60px 0;
-}
-
-.services-list {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.service-item {
-    background-color: #FFFFFF;
-    padding: 30px;
-    border-radius: 6px;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-    border-left: 5px solid #1A365D;
-}
-
-.service-item h3 {
-    color: #1A365D;
-    margin-bottom: 15px;
-    font-size: 22px;
-}
-
-.service-item p {
-    font-size: 16px;
-    color: #4A5568;
-    margin-bottom: 15px;
-}
-
-.service-item ul {
-    list-style-type: square;
-    padding-left: 20px;
-    color: #2D3748;
-}
-
-.service-item li {
-    margin-bottom: 8px;
-    font-size: 15px;
-}
-
-/* Секция документов */
-.section-subtitle {
-    text-align: center;
-    color: #718096;
-    margin-top: -30px;
-    margin-bottom: 40px;
-    font-size: 16px;
-}
-
-.documents-grid {
-    display: flex;
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.document-card {
-    background-color: #F8FAFC;
-    padding: 30px;
-    border-radius: 6px;
-    flex: 1;
-    border: 1px solid #E2E8F0;
-}
-
-.document-card h4 {
-    color: #DD6B20;
-    font-size: 18px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #E2E8F0;
-    padding-bottom: 10px;
-}
-
-.document-card ul {
-    list-style: none;
-}
-
-.document-card li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 12px;
-    font-size: 15px;
-}
-
-/* Кастомный маркер для списка документов */
-.document-card li::before {
-    content: "•";
-    color: #1A365D;
-    font-weight: bold;
-    font-size: 18px;
-    position: absolute;
-    left: 0;
-    top: -2px;
-}
-
-@media (max-width: 768px) {
-    .documents-grid {
-        flex-direction: column;
-        gap: 20px;
-    }
     .page-banner h1 {
         font-size: 26px;
     }
-}
 
-.document-card a {
-    color: #2D3748;
-    text-decoration: none;
-    transition: color 0.2s ease;
-    display: inline-block;
-}
-
-.document-card a:hover {
-    color: #DD6B20; /* При наведении ссылка станет янтарно-оранжевой */
-    text-decoration: underline;
+    .service-detail-content {
+        padding: 25px;
+    }
 }
